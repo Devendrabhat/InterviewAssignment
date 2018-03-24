@@ -2,13 +2,15 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 
+from.models import LinkModel
 from .forms import LinkForm
-
+from .linkGenerator import Generator
 # Create your views here.
 
 class HomeView(TemplateView):
     template_name = 'home.html'
     output = 'output.html'
+    gen = Generator()
 
     def get(self, request, *args, **kwargs):
         form = LinkForm()
@@ -19,7 +21,13 @@ class HomeView(TemplateView):
         if form.is_valid():
             text = form.cleaned_data['link']
 
-        return render(request,self.output,{'text':text})
+        dbobj = LinkModel()
+        dbobj.link = text
+        self.no = self.gen.generateShortLink()
+        dbobj.shortLink = str(self.no)
+        dbobj.save()
+
+        return render(request,self.output,{'text':text,'no':self.no})
 
 
 # def home(request):

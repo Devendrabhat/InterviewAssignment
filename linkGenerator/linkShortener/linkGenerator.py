@@ -1,11 +1,13 @@
+import random
 
 
+class Generator:
+    def __init__(self):
+        pass
+    def generateShortLink(self):
+        shortLink = random.randint(1000,9999)
+        return shortLink
 
-class LinkGenerator:
-	def __init__():
-		pass
-	def generateShortLink(mainLink):
-			
-		return shortLink
-	def getMainLink(shortLink):
-		return mainLink
+    # def getMainLink(self,shortLink):
+    #
+    #     return mainLink

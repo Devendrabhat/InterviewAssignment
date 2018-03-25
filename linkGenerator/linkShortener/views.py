@@ -58,32 +58,3 @@ class HomeView(TemplateView):
 def redirectView(request,no):
     obj = get_object_or_404(LinkModel,shortLink = no)
     return HttpResponseRedirect(obj.link)
-
-
-#
-# def redirectView(request,no):
-#     linksAndShortlinks = {}
-#     link = "none"
-#     links = LinkModel.objects.all().order_by('date')
-#     if len(links) > 0:
-#         allLinks = links[0]
-#     # Extracting out all the stored links with short links
-#     iterator = 0
-#
-#     while len(links) != 0 and iterator < len(links):
-#         if not allLinks.link in linksAndShortlinks:
-#             linksAndShortlinks[allLinks.link] = allLinks.shortLink
-#         if iterator != (len(links)) - 1:
-#             allLinks = allLinks.get_next_by_date()
-#         iterator += 1
-#     print(linksAndShortlinks)
-#     if no in linksAndShortlinks.values():
-#         link = [url for url, code in linksAndShortlinks.items() if code == no]
-#         link = link[0]
-#
-#
-#     if re.match(r'none',link):
-#         return HttpResponse("Link not created yet")
-#     else:
-#         obj = get_object_or_404()
-#         return HttpResponseRedirect(link)

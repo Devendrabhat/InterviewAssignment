@@ -23,5 +23,5 @@ The short code will apear in front of you.
 
 Please pass the generated code after your domain
     
-    eg - http://localhost:8000/6325/_
+    eg - http://localhost:8000/9098/_
 

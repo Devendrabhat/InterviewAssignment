@@ -1,5 +1,5 @@
 
-_The above application is written in Djando Framework.
+The above application is written in Djando Framework.
 
 
 **Run the surver with** 
@@ -23,5 +23,5 @@ The short code will apear in front of you.
 
 Please pass the generated code after your domain
     
-    eg - http://localhost:8000/9098/_
+    eg - http://localhost:8000/9098/
 

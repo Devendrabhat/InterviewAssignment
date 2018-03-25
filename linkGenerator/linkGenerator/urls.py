@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from linkShortener.views import HomeView
+from linkShortener.views import HomeView, redirectView
 
 urlpatterns = [
     url(r'^home/$',HomeView.as_view()),
     url(r'^admin/', admin.site.urls),
+    url(r'(?P<no>[\w-]+)/$',redirectView)
 ]

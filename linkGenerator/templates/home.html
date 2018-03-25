@@ -11,5 +11,9 @@
 
     <input type="submit" value="Submit">
 </form>
+<H4> This all links are already present </H4>
+{% for link in links %}
+    {{ link.link }} := {{ link.shortLink }} <br>
+{% endfor %}
 </body>
 </html>

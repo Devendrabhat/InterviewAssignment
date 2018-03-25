@@ -58,3 +58,5 @@ class HomeView(TemplateView):
 def redirectView(request,no):
     obj = get_object_or_404(LinkModel,shortLink = no)
     return HttpResponseRedirect(obj.link)
+
+
